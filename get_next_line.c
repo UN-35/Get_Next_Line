@@ -12,18 +12,18 @@
 
 #include "get_next_line.h"
 
-/* the func check if there is a new line or not:
-	-if it is exist it should return the index value (the index which the \n found).
-	-if not it should return a negative value (-1 in that case).
-*/
+// the func check if there is a new line or not:
+//	-if it is exist it should return the index value
+//	 (the index which the \n found).
+//	-if not it should return a negative value (-1 in that case).
 
-int	line_check (char *str)
+int	line_check(char *str)
 {
 	int	i;
 
 	i = 0;
 	if (!str)
-		return(-1);
+		return (-1);
 	while (str[i])
 	{
 		if (str[i] == '\n')
@@ -32,8 +32,9 @@ int	line_check (char *str)
 	}
 	return (-1);
 }
+// now we should print the line we got.
 
-char	*print_line (char **str)
+char	*print_line(char **str)
 {
 	int		i;
 	char	*return_line;
@@ -53,6 +54,8 @@ char	*print_line (char **str)
 	*str = tmp_str;
 	return (return_line);
 }
+// when we allocate a block we should free it and reset it to NULL;
+// we dont want any leak tho.
 
 char	*_free (char *cpy, char **str)
 {
@@ -91,14 +94,4 @@ char	*get_next_line(int fd)
 	}
 	free (cpy);
 	return (print_line (&str));
-}
-
-#include <stdio.h>
-int main()
-{
-	int fd = open("hi.txt", O_RDONLY);
-	printf("%s",get_next_line(fd));
-	printf("%s",get_next_line(fd));
-	printf("%s",get_next_line(fd));
-	printf("%s",get_next_line(fd));
 }
