@@ -17,4 +17,10 @@ The project is about a function returns a line read from a file descriptor
 *`print_line()`* : the function checks if there is a \n or not with `line_check()`, if it's exist it returns the 1st line till the \n, and next time from the \n till the end of file of another new line if it's exist, and that's on..<br>
 *`_free()`* : this function helps to free the string and its copy which we put the line we return from the previous function, and set them to NULL.<br>
 *`get_next_line()`* : is the project main function where we check the BUFFER_SIZE and read from the fd based on it..<br><br>
+
 **<a href="https://github.com/UNES01/get_next_line_1337cursis/blob/main/get_next_line_utils.c">get_next_line_utils.c:</a>**<br><br>
+*`ft_strlen()`* : is a function does the same behavior as `strlen()` from string.h which is count the length of the string given as parameter.<br>
+*`ft_substr()`* : returns a sub string from the one given as parameter. <br>
+*`ft_strjoin()`* : it concatenate the two strings given as parameters.<br><br>
+
+**<a href="https://github.com/UNES01/get_next_line_1337cursis/blob/main/get_next_line.c">get_next_line.c:</a>**<br><br>
