@@ -21,6 +21,4 @@ The project is about a function returns a line read from a file descriptor
 **<a href="https://github.com/UNES01/get_next_line_1337cursis/blob/main/get_next_line_utils.c">get_next_line_utils.c:</a>**<br><br>
 *`ft_strlen()`* : is a function does the same behavior as `strlen()` from string.h which is count the length of the string given as parameter.<br>
 *`ft_substr()`* : returns a sub string from the one given as parameter. <br>
-*`ft_strjoin()`* : it concatenate the two strings given as parameters.<br><br>
-
-**<a href="https://github.com/UNES01/get_next_line_1337cursis/blob/main/get_next_line.c">get_next_line.c:</a>**<br><br>
+*`ft_strjoin()`* : it concatenate the two strings given as parameters.
