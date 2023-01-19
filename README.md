@@ -10,7 +10,7 @@ The project is about a function returns a line read from a file descriptor
 
 ***Functions used:***
 
-**<a href="https://github.com/UNES01/get_next_line_1337cursis/blob/main/get_next_line.c">get_next_line.c:</a>**<br><br>
+**<a href="https://github.com/UNES01/get_next_line_1337cursis/blob/main/get_next_line.c">get_next_line.c:</a>, <a href="https://github.com/UNES01/get_next_line_1337cursis/blob/main/get_next_line_utils_bonus.c">get_next_line_bonus.c:</a>**<br><br>
 *`line_check()`* : the function check if there is a new line or not:<br>
 	                -if it is exist it should return the index value (the index which the \n found).<br>
 	                -if not it should return a negative value (-1 in that case).<br>
