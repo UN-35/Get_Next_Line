@@ -25,7 +25,7 @@ The project is about a function returns a line read from a file descriptor
 
 -------------------------------------------------------------------------
 
-***Bonus vs mandatory:***
+***Bonus part:***
 
 The bonu part is the same as the mandatory; the little deffirence is that the bonus part can manage multiple file descriptors at the same time.
 For example, if you can read from the file descriptors 3, 4 and 5, you should be
