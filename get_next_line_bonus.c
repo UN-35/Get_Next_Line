@@ -6,12 +6,11 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 13:56:47 by yoelansa          #+#    #+#             */
-/*   Updated: 2023/01/19 18:26:59 by yoelansa         ###   ########.fr       */
+/*   Updated: 2023/01/21 01:03:54 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
-// function checks if there's a newline or not
 
 int	line_check(char *str)
 {
@@ -28,7 +27,6 @@ int	line_check(char *str)
 	}
 	return (-1);
 }
-// function prints the line give found
 
 char	*print_line(char **str)
 {
@@ -36,7 +34,7 @@ char	*print_line(char **str)
 	char	*return_line;
 	char	*tmp_str;
 
-	i = line_chec(*str);
+	i = line_check(*str);
 	if (i < 0)
 	{
 		return_line = ft_substr(*str, 0, ft_strlen(*str) - 1);
@@ -50,9 +48,8 @@ char	*print_line(char **str)
 	*str = tmp_str;
 	return (return_line);
 }
-// freeing the allocated block
 
-char	*ft_free(char *copy, char **str)
+char	*_free(char *copy, char **str)
 {
 	if (*str)
 	{
@@ -75,18 +72,16 @@ char	*get_next_line(int fd)
 	if (!cpy)
 		return (NULL);
 	i = 1;
-	while (line_check(str) == -1 && i > 0)
+	while (line_check(str[fd]) == -1 && i > 0)
 	{
 		i = read (fd, cpy, BUFFER_SIZE);
 		if (i < 0)
-			return (_free(cpy, &str));
+			return (_free(cpy, &str[fd]));
 		cpy[i] = '\0';
-		str[fd] = ft_strjoin(str, cpy);
-		if (!str)
-			return (_free(cpy, &str));
-		if (!str[0])
-			return (_free(cpy, &str));
+		str[fd] = ft_strjoin(str[fd], cpy);
+		if (!str[fd] || !str[fd][0])
+			return (_free(cpy, &str[fd]));
 	}
 	free (cpy);
-	return (print_line (&str));
+	return (print_line (&str[fd]));
 }
